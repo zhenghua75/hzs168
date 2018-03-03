@@ -1,0 +1,76 @@
+<?php
+/**
+ * @file views_slideshow_liquidcarousel.module
+ */
+
+/**
+ * Implements hook_libraries_info().
+ */
+function views_slideshow_liquidcarousel_libraries_info() {
+  $libraries['liquidcarousel'] = array(
+    'name' => 'jQuery Liquid Carousel',
+    'vendor url' => 'http://www.nikolakis.net/liquidcarousel/',
+    'download url' => 'http://www.nikolakis.net/liquidcarousel/liquidcarousel.zip',
+    'version arguments' => array(
+      'pattern' => '@jQuery liquid carousel v([0-9].+)@',
+      'file' => 'js/jquery.liquidcarousel.js',
+    ),
+    'files' => array(
+      'js' => array(
+        'js/jquery.liquidcarousel.js',
+      ),
+    ),
+    'variants' => array(
+      'minified' => array(
+        'files' => array(
+          'js' => array(
+            'js/jquery.liquidcarousel.min.js',
+          ),
+        ),
+      ),
+      'packed' => array(
+        'files' => array(
+          'js' => array(
+            'js/jquery.liquidcarousel.pack.js',
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_slideshow_liquidcarousel_theme($existing, $type, $theme, $path) {
+  return array(
+    'views_slideshow_liquidcarousel_main_frame' => array(
+      'variables' => array('view' => NULL, 'settings' => array(), 'rows' => array(), 'title' => ''),
+      'template' => 'theme/views-slideshow-liquidcarousel-main-frame',
+      'file' => 'theme/views_slideshow_liquidcarousel.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Get the install error message.
+ */
+function _views_slideshow_liquidcarousel_get_install_error_message() {
+  $library = libraries_load('liquidcarousel', 'minified');
+
+  $library_link = l($library['download url'], $library['download url'],
+    array('attributes' => array('target' => '_blank')));
+
+  $t = get_t();
+  $output = $t('The jQuery Liquid Carousel plugin needs to be installed.');
+  $output .= ' ';
+  $output .= $t('Download the jQuery plugin from !link and unzip it into @library_path.',
+    array(
+      '!link' => $library_link,
+      '@library_path' => 'sites/all/libraries/liquidcarousel',
+    )
+  );
+  return $output;
+}

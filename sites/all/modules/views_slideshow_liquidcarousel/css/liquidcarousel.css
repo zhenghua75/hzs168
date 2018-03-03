@@ -1,0 +1,27 @@
+/**
+ * @file liquidcarousel.css
+ */
+
+.liquid {
+  padding: 10px 0;
+}
+
+.liquid .previous {
+  display: block;
+  float: left;
+  width: 60px;
+  cursor: pointer;
+}
+
+.liquid .next {
+  display: block;
+  float: right;
+  width: 60px;
+  cursor: pointer;
+}
+
+.liquid ul li {
+  padding: 0 2px;
+  margin: 0;
+  width: 200px;
+}

@@ -1,0 +1,13 @@
+name = Field Group Inline
+description = Show every field inside group as inline element.
+package = Fields
+core = 7.x
+
+dependencies[] = field_group
+
+; Information added by Drupal.org packaging script on 2014-04-28
+version = "7.x-1.0-beta5"
+core = "7.x"
+project = "field_group_inline"
+datestamp = "1398712728"
+

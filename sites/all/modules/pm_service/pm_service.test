@@ -1,0 +1,214 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Privatemsg Services test
+ */
+
+class PrivatemsgServiceTestCase extends DrupalWebTestCase {
+
+  /**
+   * getInfo() returns properties that are displayed in the test selection form.
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Privatemsg Services functionality.',
+      'description' => 'Ensure that the Privatemsg services integration functions properly.',
+      'group' => 'Privatemsg',
+      'dependencies' => array('services'),
+    );
+  }
+
+  /**
+   * setUp() performs any pre-requisite tasks that need to happen.
+   */
+  public function setUp() {
+    // Must include every single module that PM Service module relies on.
+    parent::setUp('privatemsg', 'services', 'services_keyauth', 'pm_service');
+  }
+
+  /**
+   * Test pm.get service (get messages through services)
+   */
+  public function testPrivatemsgServiceGet() {
+
+    // Setup 2 users.
+    $author    = $this->drupalCreateUser(array('write privatemsg'));
+    $recipient = $this->drupalCreateUser(array('administer services', 'access administration pages', 'get private messages from remote'));
+
+    // Send 1st message to recipient.
+    $subject = 'My First Message';
+    $body = $this->randomName(20);
+    privatemsg_new_thread(array($recipient), $subject, $body, array('author' => $author));
+
+    // Send 2nd message to recipient.
+    $subject = 'My Second Message';
+    $body = $this->randomName(20);
+    privatemsg_new_thread(array($recipient), $subject, $body, array('author' => $author));
+
+    // Have recipient navigate to services browser page for pm.get and call the method.
+    $this->drupalLogin($recipient);
+    $this->drupalGet('admin/build/services/browse/pm.get');
+
+    // Have recipient click on the "Call method" button.
+    $this->drupalPost('admin/build/services/browse/pm.get', array(), t('Call method'));
+
+    // Make sure the that the 1st messages is returned.
+    $this->assertRaw('My First Message', t('Verify that the custom title of thread #1 was found'));
+
+    // Make sure the that the 1st messages is returned.
+    $this->assertRaw('My Second Message', t('Verify that the custom title of thread #2 was found'));
+
+  }
+
+  /**
+   * Test pm.getThread service (get thread through service)
+   */
+  public function testPrivatemsgServiceGetThread() {
+
+    // Setup 2 users
+    $author    = $this->drupalCreateUser(array('write privatemsg'));
+    $recipient = $this->drupalCreateUser(array('administer services', 'access administration pages', 'get private messages from remote'));
+
+    // Send 1 message to recipient
+    $subject = 'My First Message';
+    $body = $this->randomName(20);
+    privatemsg_new_thread(array($recipient), $subject, $body, array('author' => $author));
+
+    // Have recipient navigate to services browser page for pm.get and call the method.
+    $this->drupalLogin($recipient);
+    $this->drupalGet('admin/build/services/browse/pm.getThread');
+
+    // Have recipient click on the "Call method" button.
+    $edit = array(
+      'arg[0]' => db_result(db_query_range("SELECT thread_id FROM {pm_index} ORDER BY mid", 0, 1)),
+    );
+    $this->drupalPost('admin/build/services/browse/pm.getThread', $edit, t('Call method'));
+
+    // Make sure the that 2 messages are returned.
+    $this->assertRaw('My First Message', t('Verify that the custom title of thread #1 was found'));
+
+  }
+
+  /**
+   * Test pm.unreadCount service (determines the number of unread messages)
+   */
+  public function testPrivatemsgServiceUnreadCount() {
+
+    // Setup 2 users
+    $author    = $this->drupalCreateUser(array('write privatemsg'));
+    $recipient = $this->drupalCreateUser(array('administer services', 'access administration pages', 'get private messages from remote'));
+
+    // Send 2 messages to this user.
+    $subject = $this->randomName(20);
+    $subject2 = $this->randomName(20);
+    $body = $this->randomName(100);
+    $body2 = $this->randomName(100);
+    $this->pass("Send 2 messages to the recipient.");
+    privatemsg_new_thread(array($recipient), $subject, $body, array('author' => $author));
+    privatemsg_new_thread(array($recipient), $subject2, $body2, array('author' => $author));
+
+    // Have recipient navigate to services browser page for pm.unreadCount and call the method.
+    $this->drupalLogin($recipient);
+    $this->drupalGet('admin/build/services/browse/pm.unreadCount');
+
+    // Have recipient click on the "Call method" button.
+    $this->drupalPost('admin/build/services/browse/pm.unreadCount', array(), t('Call method'));
+
+    // Make sure the that 2 messages are returned.
+    $this->assertRaw('<h3>Result</h3><code><pre>2</pre></code>', t('Verify that the count of unread messages is "2".'));
+
+  }
+
+  /**
+   * Test pm.send service (create a new thread)
+   */
+  public function testPrivatemsgServiceSend() {
+
+    // Setup 2 users.
+    $author_permissions = array(
+      'write privatemsg',
+      'administer services',
+      'access administration pages',
+      'send private messages from remote',
+    );
+    $author = $this->drupalCreateUser($author_permissions);
+    $recipient = $this->drupalCreateUser(array('read privatemsg'));
+
+    // Have author navigate to services browser page for pm.send and call the method.
+    $this->drupalLogin($author);
+    $this->drupalGet('admin/build/services/browse/pm.send');
+
+    // Author sends a message to recipient through services.
+    $edit = array(
+      'arg[0]' => $recipient->name, // Recipient name.
+      'arg[1]' => 'Message Subject', // Message subject.
+      'arg[2]' => 'Body of this messages', // Message body.
+    );
+    $this->drupalPost('admin/build/services/browse/pm.send', $edit, t('Call method'));
+
+    // Make sure the reply got sent out successfully.
+    $this->assertRaw('<h3>Result</h3><code><pre>1</pre></code>', t('Messages was successfully sent to recipient.'));
+
+  }
+
+  /**
+   * Test pm.send service (reply to a thread through services)
+   */
+  public function testPrivatemsgServiceReply() {
+
+    // Setup 2 users.
+    $author_permissions = array(
+      'write privatemsg',
+      'administer services',
+      'access administration pages',
+      'get private messages from remote',
+    );
+    $author = $this->drupalCreateUser($author_permissions);
+    $recipient_permissions = array(
+      'write privatemsg',
+      'administer services',
+      'access administration pages',
+      'get private messages from remote',
+      'send private messages from remote',
+    );
+    $recipient = $this->drupalCreateUser($recipient_permissions);
+
+    // Author sends a message to recipient.
+    $subject = 'My First Message';
+    $body = $this->randomName(20);
+    privatemsg_new_thread(array($recipient), $subject, $body, array('author' => $author));
+
+    // Recipient logs in and navigates to the services admin page to send a message.
+    $this->drupalLogin($recipient);
+    $this->drupalGet('admin/build/services/browse/pm.send');
+
+    // Recipient replies to the first thread sent by author.
+    $edit = array(
+      'arg[0]' => $author->name,
+      'arg[1]' => 'Recipient replies',
+      'arg[2]' => 'This is my reply',
+      'arg[3]' => db_result(db_query_range("SELECT thread_id FROM {pm_index} ORDER BY mid", 0, 1)),
+    );
+    $this->drupalPost('admin/build/services/browse/pm.send', $edit, t('Call method'));
+
+    // Make sure the reply got sent out successfully.
+    $this->assertRaw('<h3>Result</h3><code><pre>1</pre></code>', t('Reply was successfully sent by recipient.'));
+
+    // Login the author and make sure he received the reply (testing through services call).
+    $this->drupalLogin($author);
+    $this->drupalGet('admin/build/services/browse/pm.getThread');
+
+    // Have recipient click on the "Call method" button.
+    $edit = array(
+      'arg[0]' => 1,
+    );
+    $this->drupalPost('admin/build/services/browse/pm.getThread', $edit, t('Call method'));
+
+    // Make sure the that the reply from the recipient is visible in thread #1.
+    $this->assertRaw('This is my reply', t('Verify that author received the reply from recipient.'));
+
+  }
+
+}

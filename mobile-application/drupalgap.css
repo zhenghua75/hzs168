@@ -1,0 +1,250 @@
+/**
+ * Splash Screen
+ */
+ #_drupalgap_splash .ui-content {
+   position: absolute; top: 40px; right: 0; bottom: 0; left: 0;
+ }
+ #_drupalgap_splash_content {
+   width: 100%; height: 100%; position: relative;
+ }
+
+/**
+ * Logo
+ */
+.logo {
+  text-align: center;
+}
+
+/**
+ * Forms
+ */
+
+div.form-item {
+  margin-bottom: 1em;
+}
+
+/**
+ * System Messages
+ */
+
+div.messages {
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border: 1px solid;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+}
+
+div.status {
+  background-image: url(images/message-24-ok.png);
+  border-color: #be7;
+}
+div.status,
+.ok {
+  color: #234600;
+}
+div.status,
+table tr.ok {
+  background-color: #f8fff0;
+}
+
+div.warning {
+  background-image: url(images/message-24-warning.png);
+  border-color: #ed5;
+}
+div.warning,
+.warning {
+  color: #840;
+}
+div.warning,
+table tr.warning {
+  background-color: #fffce5;
+}
+
+div.error {
+  background-image: url(images/message-24-error.png);
+  border-color: #ed541d;
+}
+div.error,
+.error {
+  color: #8c2e0b;
+}
+div.error,
+table tr.error {
+  background-color: #fef5f1;
+}
+div.error p.error {
+  color: #333;
+}
+
+div.messages ul {
+  margin: 0 0 0 1em; /* LTR */
+  padding: 0;
+}
+div.messages ul li {
+  list-style-image: none;
+}
+
+/**
+ * Lists
+ */
+.dg_empty_list_header {
+  line-height: 0em;
+  margin: 0em 0em 1.3em 0em;
+}
+
+/**
+ * Images
+ */
+
+/**
+ * Don't let images stretch out of their parent container in the main content
+ * div. Ignore google images.
+ */
+div[role="main"] img,
+div[role="banner"] img,
+#_drupalgap_splash_content img {
+  width: auto !important;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/**
+ * Menus
+ */
+div[data-role="header"] div[data-role="controlgroup"] .ui-controlgroup-controls .ui-btn-icon-notext {
+  padding: .45em 1em;
+}
+@-moz-document url-prefix() {
+    div[data-role="header"] div[data-role="controlgroup"] .ui-controlgroup-controls .ui-btn-icon-notext {
+      padding: .4em 1em;
+    }
+}
+
+
+#home .ui-content{
+  padding:0;
+}
+
+#home .ui-header{
+  border:0;
+}
+#home .ui-footer{
+  border: 0;
+}
+
+#home .ui-content .ui-grid-a .ui-btn,
+#home .ui-content .ui-grid-b .ui-btn{
+  border: 0;
+  margin: 0;
+}
+#home .ui-content .ui-grid-a .ui-block-a{
+  border-right: 1px solid #bbb;
+}
+#home .ui-content .ui-grid-a{
+  margin: 5px 15px 5px 15px;
+  border-width: 1px 0 1px 0;
+  border-color:#bbb;
+  border-style:solid;
+  padding: 5px 0 5px 0;
+}
+#home .ui-content .ui-grid-b{
+  margin: 5px 15px 5px 15px;
+  padding: 5px 0 5px 0;
+  border-width: 0 0 1px 0;
+  border-color:#bbb;
+  border-style:solid;
+}
+#home .ui-content .ui-grid-b .ui-block-a{
+  border-right: 1px solid #bbb;
+}
+#home .ui-content .ui-grid-b .ui-block-b{
+  border-right: 1px solid #bbb;
+}
+#home .ui-content .ui-grid-b .ui-block-c{
+
+}
+.blueimp-gallery {
+background: rgba(233, 233, 233, 233);
+margin: 0;
+}
+
+.blueimp-gallery-carousel{
+  margin: 0;
+  box-shadow:0 0 0;
+}
+.blueimp-gallery > .indicator{
+  position: absolute;
+  margin:0;
+  bottom: 15px;
+  text-align: right;
+  left: auto;
+  right: 0px;
+  top: auto;
+  padding-right: 15px;
+  /*left: auto;*/
+}
+
+label.buttonlabel {
+  /*float: right;
+  margin: auto;
+  height:48px;
+  line-height: 48px;
+  font-size: 14px;*/
+}
+/*
+.ui-mobile label {
+  font-weight: normal;
+  font-size: 14px;
+}*/
+.buttonimage{
+  /*width:64px;
+  height:64px;*/
+}
+
+.ui-mobile label,
+div.ui-controlgroup-label {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.ui-listview .ui-li-has-thumb > img:first-child,
+.ui-listview .ui-li-has-thumb > .ui-btn > img:first-child,
+.ui-listview .ui-li-has-thumb .ui-li-thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-height: 100px;
+  max-width: 100px;
+  -webkit-border-radius: 48px;
+  -moz-border-radius: 48px;
+  border-radius: 48px;
+}
+.ui-listview > li.ui-first-child img:first-child:not(.ui-li-icon) {
+  -webkit-border-top-left-radius: 48px;
+  border-top-left-radius: 48px;
+}
+.ui-listview > li.ui-last-child img:first-child:not(.ui-li-icon) {
+  -webkit-border-bottom-left-radius: 48px;
+  border-bottom-left-radius: 48px;
+}
+
+.ui-btn {
+  font-size: 12px;
+}
+
+.ui-listview > .ui-li-has-thumb > .ui-btn,
+.ui-listview > .ui-li-static.ui-li-has-thumb {
+  min-height: 83.2px;
+  padding-left: 120px;
+}
+
+.ui-listview > li p {
+  font-size: .75em;
+  font-weight: normal;
+  margin: .6em 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+}

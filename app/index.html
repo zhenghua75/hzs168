@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html data-dpr="2">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height,target-densitydpi=device-dpi">-->
+    <!-- <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,width=device-width"> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' http: https: data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <!-- <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="shortcut icon" href="http://www.hzs168.com/sites/default/files/LOGO04.ico" type="image/vnd.microsoft.icon">
+    <!-- jQuery Mobile -->
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css">
+    <link href="js/jquery-mobile-iscrollview/jquery.mobile.iscrollview.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/jquery-mobile-iscrollview/jquery.mobile.iscrollview-pull.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="jquery/jquery-2.1.4.js"></script>
+    <script src="js/jquery-validation-1.14.0/jquery.validate.js"></script>
+    <script src="js/jquery-validation-1.14.0/localization/messages_zh.js"></script>
+    <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery-mobile-iscrollview/iscroll.js" type="text/javascript"></script>
+    <script src="js/jquery-mobile-iscrollview/jquery.mobile.iscrollview.js" type="text/javascript"></script>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="js/Swiper-3.1.2/css/swiper.min.css">
+    <script src="js/Swiper-3.1.2/js/swiper.jquery.min.js"></script>
+    <link href="js/rateit/rateit.css" rel="stylesheet" type="text/css">
+    <script src="js/rateit/jquery.rateit.js" type="text/javascript"></script>
+    <script src="js/localResizeIMG4/lrz.bundle.js?v=90e352d"></script>
+    <link rel="stylesheet" href="css/theme-c.css">
+    <link rel="stylesheet" href="css/theme-d.css">
+    <link rel="stylesheet" href="css/theme-e.css">
+    <link rel="stylesheet" href="css/theme-f.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/china_province.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+    <script type="text/javascript" src="js/pull.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!---->
+    <title>核作社</title>
+</head>
+
+<body>
+    <!-- 首页 -->
+    <div data-role="page" id="front" data-theme="c" data-tap-toggle="false" data-title="核作社">
+        <div data-role="header" data-theme="c" class="top" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#node-association-list" data-icon="xh">协会</a></li>
+                    <li>
+                        <input type="search" value="" placeholder="买核桃去“核作社” 货真价实还不贵" id="frontsearch" onfocus="javascript:$('body').pagecontainer('change', '#search');" />
+                    </li>
+                    <li><a href="#message-list" data-icon="xx">消息</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /header -->
+        <div data-role="main" data-theme="c" class="ui-body-c" id="front-page-main">
+            <!-- 内容列表 -->
+            <div class="swiper-container" id="front-slideshow">
+                <div id="slideshow-list" class="swiper-wrapper"></div>
+                <div id="front-slideshow-page" class="swiper-pagination"></div>
+            </div>
+            <div class="ui-grid-c firstbtn">
+                <div class="ui-block-a">
+                    <a href="#saledemand" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-1-1.png" width="100%" />
+                        </div>
+                        <p class="hbtext">卖</p>
+                    </a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#buydemand" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-1-2.png" width="100%" />
+                        </div>
+                        <p class="hbtext">买</p>
+                    </a>
+                </div>
+                <div class="ui-block-c">
+                    <a href="javascript:void(0);" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-2-1.png" width="100%" />
+                        </div>
+                        <p class="hbtext">抢单专区</p>
+                    </a>
+                </div>
+                <div class="ui-block-d">
+                    <a href="javascript:void(0);" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-2-2.png" width="100%" />
+                        </div>
+                        <p class="hbtext">招标专区</p>
+                    </a>
+                </div>
+            </div>
+            <!-- /grid-a -->
+            <div class="ui-grid-c secondbtn">
+                <!-- <div class="ui-block-a">
+                    <a href="#node-association-list" class="ui-btn">
+                        <div class="hbimg1">
+                            <image src="img/1-3-4.png" width="100%" />
+                        </div>
+                        <p class="hbtext">核桃协会</p>
+                    </a>
+                </div> -->
+                <div class="ui-block-a">
+                    <a href="javascript:void(0);" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-2-3.png" width="100%" />
+                        </div>
+                        <p class="hbtext">竞标专区</p>
+                    </a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#node-employment-list" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-3-2.png" width="100%" />
+                        </div>
+                        <p class="hbtext">用工</p>
+                    </a>
+                </div>
+                <div class="ui-block-c">
+                    <a href="#node-logistics-list" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-3-3.png" width="100%" />
+                        </div>
+                        <p class="hbtext">物流</p>
+                    </a>
+                </div>
+                <div class="ui-block-d">
+                    <a href="#article" class="ui-btn">
+                        <div class="hbimg">
+                            <image src="img/1-1-3.png" width="100%" />
+                        </div>
+                        <p class="hbtext">其他需求</p>
+                    </a>
+                </div>
+            </div>
+            <image src="img/4-1.png" style="width:100%;padding-bottom: 5px;" />
+            <ul id="recommend-store-list" data-role="listview" data-icon="false" data-inset="true"></ul>
+            <!-- <div style="clear:left"></div> -->
+            <div class="ui-bar-c moreaction">
+                <a href="#store-list">
+                    <!-- <image src="img/6.png" />
+                    <h3>明星商家</h3> -->
+                    <p>>>更多</p>
+                </a>
+            </div>
+            <div style="clear:left"></div>
+            <image src="img/4-2.png" style="width:100%;padding-bottom: 5px;" />
+            <ul id="recommend-list" data-role="listview" data-icon="false" data-inset="true"></ul>
+            <div class="ui-bar-c moreaction">
+                <a href="#node-list">
+                    <!-- <image src="img/6.png" />
+                    <h3>核作社精品推荐</h3> -->
+                    <p>>>更多</p>
+                </a>
+            </div>
+            <div style="clear:left"></div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-theme="c" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="ui-alt-icon">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand" class="">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand" class="">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /首页 -->
+    <!-- 内容页面 -->
+    <div data-role="page" id="node" data-theme="e" data-title="内容">
+        <div data-role="header" data-theme="e" data-position="fixed" data-tap-toggle="false" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="return" data-ajax="false" data-rel="back"></a>
+                    </li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                    <li>
+                        <a href="#front" data-icon="home2"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-e" id="node-page-main">
+            <div id="slideshow-node-container" class="swiper-container">
+                <div id="slideshow-node-list" class="swiper-wrapper"></div>
+                <div id="slideshow-node-page" class="swiper-pagination"></div>
+            </div>
+            <div id="node-content"></div>
+            <div data-role="popup" id="popupnodemessage" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <!-- <h3>消息</h3>
+                        <label for="popupnodemessage-subject">标题</label>
+                    <input type="text" name="popupnodemessage-subject" id="popupnodemessage-subject" placeholder="标题" value="">
+                    <label for="popupnodemessage-body">内容</label> -->
+                <textarea cols="50" rows="20" name="popupnodemessage-body" id="popupnodemessage-body"></textarea>
+
+                        <button class="ui-btn ui-corner-all ui-shadow ui-btn-b" id="popupnodemessage-submit" data-rel="back">发消息</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" id="node-footer" data-position="fixed" data-tap-toggle="false" data-theme="e">
+            <div data-role="navbar" >
+                <ul>
+                    <li>
+                        <a id="node-flag" href="javascript:void(0);" data-icon="bookmark" class="">收藏</a>
+                    </li>
+                    <li>
+                        <a href="#popupnodemessage" data-rel="popup" data-position-to="window" data-icon="message" data-transition="slideup">发消息</a>
+                    </li>
+                    <!-- <li>
+                        <a href="javascript:void(0);" data-icon="qd" class="">抢单</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="zb">招标</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="jb">竞标</a>
+                    </li> -->
+                    <!-- <li>
+                        <a id="addToCart" data-icon="cart" class="">加入购物车</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /内容页面 -->
+    <!-- 内容页面 -->
+    <div data-role="page" id="node-product" data-theme="e" data-title="内容">
+        <div data-role="header" data-theme="e" class="top" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="return" data-ajax="false" data-rel="back"></a>
+                    </li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                    <li>
+                        <a href="#front" data-icon="home2"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-e">
+            <div id="slideshow-node-product-container" class="swiper-container">
+                <div id="slideshow-node-product-list" class="swiper-wrapper"></div>
+                <div id="slideshow-node-product-page" class="swiper-pagination"></div>
+            </div>
+            <div id="node-product-content"></div>
+            <div data-role="popup" id="popupproductmessage" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <!-- <h3>消息</h3>
+                        <label for="popupproductmessage-subject">标题</label>
+                    <input type="text" name="popupproductmessage-subject" id="popupproductmessage-subject" placeholder="标题" value="">
+                    <label for="popupproductmessage-body">内容</label> -->
+                <textarea cols="50" rows="20" name="popupproductmessage-body" id="popupproductmessage-body"></textarea>
+
+                        <button class="ui-btn ui-corner-all ui-shadow ui-btn-b" id="popupproductmessage-submit" data-rel="back">发消息</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" id="node-product-footer" data-tap-toggle="false" data-position="fixed" data-theme="e">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a id="node-product-flag" href="javascript:void(0);" data-icon="bookmark" class="">收藏</a>
+                    </li>
+                    <!-- <li>
+                        <a href="javascript:void(0);" data-icon="modify" class="">修改</a>
+                    </li> -->
+                    <li>
+                        <a href="#popupproductmessage" data-rel="popup" data-position-to="window" data-icon="message" data-transition="slideup">发消息</a>
+                    </li>
+                    <!-- <li>
+                        <a href="javascript:void(0);" data-icon="qd" class="">抢单</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="zb">招标</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" data-icon="jb">竞标</a>
+                    </li> -->
+                    <li>
+                        <a id="addToCart" data-icon="cart" class="">加入购物车</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /内容页面 -->
+    <!-- 编辑内容 -->
+    <div data-role="page" id="node-edit" data-title="编辑">
+        <div data-role="header">
+            <a href="#front" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">首页</a>
+            <h1>编辑内容</h1>
+            <a href="#user-profile" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext">用户</a>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form>
+                <label for="node-edit-title">标题</label>
+                <input type="text" name="node-edit-title" id="node-edit-title" value="">
+                <label for="node-edit-body">正文</label>
+                <textarea cols="50" rows="20" name="node-edit-body" id="node-edit-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-edit-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="grid"></a>
+                    </li>
+                    <li>
+                        <a href="#node-create" data-icon="plus" class="node-create" data-transition="slideup"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /编辑内容 -->
+    <!-- 用户注册 -->
+    <div data-role="page" id="user-register" data-theme="d" data-title="用户注册">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>用户注册</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="user-register-form">
+                <!-- <label for="user-register-nickname">昵称</label> -->
+                <!-- <input type="text" name="user-register-nickname" id="user-register-nickname" value=""> -->
+                <!-- <label for="user-register-name">用户名</label> -->
+                <!-- <input type="text" name="user-register-name" id="user-register-name" value=""> -->
+                <div class="ui-field-contain">
+                    <label for="user-register-realname">姓名</label>
+                    <input type="text" name="user-register-realname" id="user-register-realname" placeholder="姓名" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-register-phone">手机号码</label>
+                    <input type="text" name="user-register-phone" id="user-register-phone" placeholder="手机号码" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-register-password">密码</label>
+                    <input type="password" name="user-register-password" id="user-register-password" placeholder="密码" value="">
+                    <label for="user-register-validatepassword">确认密码</label>
+                    <input type="password" name="user-register-validatepassword" id="user-register-validatepassword" placeholder="确认密码" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-register-validatecode">验证码</label>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input type="text" name="user-register-validatecode" id="user-register-validatecode" placeholder="验证码" value="">
+                        </div>
+                        <div class="ui-block-b">
+                            <button class="ui-btn ui-corner-all ui-btn-a" id="user-register-getvalidatecode">获取验证码</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-register-province">省</label>
+                    <select name="user-register-province" id="user-register-province"></select>
+                    <label for="user-register-city">市</label>
+                    <select name="user-register-city" id="user-register-city"></select>
+                    <label for="user-register-county">区</label>
+                    <select name="user-register-county" id="user-register-county"></select>
+                </div>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="user-register-submit">注册</button>
+                    <!-- <input data-role="submit" type="submit" value="注册"> -->
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /用户注册 -->
+    <!-- 用户登录 -->
+    <div data-role="page" id="user-login" data-theme="d" data-title="用户登录">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>用户登录</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form>
+                <label for="user-login-name">用户名</label>
+                <input type="text" name="user-login-name" id="user-login-name" value="">
+                <label for="user-login-password">密码</label>
+                <input type="password" name="user-login-password" id="user-login-password" value="">
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="user-login-submit">登录</button>
+                </p>
+                <p>
+                    <a href="#user-register" data-role="button">注册</a>
+                </p>
+                <p>
+                    <a href="#request-new-password" data-role="button">找回密码</a>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /用户登录 -->
+    <!-- 请求新密码 -->
+    <div data-role="page" id="request-new-password" data-theme="d" data-title="请求新密码">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>请求新密码</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="user-newpassword-form">
+                <input type="hidden" id="user-newpassword-uid" value="" />
+                <div class="ui-field-contain">
+                    <label for="user-newpassword-phone">手机号码</label>
+                    <input type="text" name="user-newpassword-phone" id="user-newpassword-phone" placeholder="手机号码" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-newpassword-password">密码</label>
+                    <input type="password" name="user-newpassword-password" id="user-newpassword-password" placeholder="密码" value="">
+                    <label for="user-newpassword-validatepassword">确认密码</label>
+                    <input type="password" name="user-newpassword-validatepassword" id="user-newpassword-validatepassword" placeholder="确认密码" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-newpassword-validatecode">验证码</label>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input type="text" name="user-newpassword-validatecode" id="user-newpassword-validatecode" placeholder="验证码" value="">
+                        </div>
+                        <div class="ui-block-b">
+                            <button class="ui-btn ui-corner-all ui-btn-a" id="user-newpassword-getvalidatecode">获取验证码</button>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <!-- <button class="ui-btn ui-corner-all ui-btn-a" id="user-register-submit">注册</button> -->
+                    <!-- <input data-role="submit" type="submit" value="设置新密码"> -->
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="user-newpassword-submit">设置新密码</button>
+                </p>
+                <p>输入手机号，获取验证码，输入新密码，设置新密码</p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /请求新密码 -->
+    <!-- 用户档案 -->
+    <div data-role="page" id="user-profile" data-theme="d" data-title="用户档案">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>我的信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d" id="user-profile-body">
+            <ul id="user-profile-detail" data-role="listview" data-inset="true"></ul>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#bookmark-good-list">收藏的宝贝</a>
+                    </li>
+                    <li>
+                        <a href="#bookmark-store-list">收藏的店铺</a>
+                    </li>
+                </ul>
+            </div>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#order-list">
+                        <img src="img/myorder.png" class="ui-li-icon" />
+                        <p>全部订单</p>
+                        <p class="ui-li-aside">查看全部订单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#myinfo">
+                        <img src="img/myinfo.png" class="ui-li-icon" />
+                        <p>我的需求</p>
+                    </a>
+                </li>
+            </ul>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#cart">
+                        <img src="img/10-5-1.png" class="ui-li-icon" />
+                        <p>购物车</p>
+                    </a>
+                </li>
+            </ul>
+            <button class="ui-btn ui-corner-all ui-btn-a user-logout">退出</button>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand" class="">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand" class="">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="ui-alt-icon">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /用户档案 -->
+    <!-- 商家列表 -->
+    <div data-role="page" id="store-list" data-theme="f"  data-title="商家列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索商家" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-f">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="store-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="c">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /商家列表 -->
+    <!-- 商家信息 -->
+    <div data-role="page" id="store-info" data-theme="d" data-title="商家信息">
+        <div data-role="header" data-theme="d" class="top" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>商家信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d">
+            <ul id="store-info-intro" data-role="listview" data-inset="true" data-icon="false"></ul>
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#store-info-detail" data-ajax="false">店铺首页</a></li>
+                        <li><a id="store-info-allproducts" href="#store-info-products" data-ajax="false">所有商品</a></li>
+                    </ul>
+                </div>
+                <div id="store-info-detail" class="ui-body-d ui-content store-detail"></div>
+                <div id="store-info-products">
+                    <ul id="store-info-products-list" data-role="listview" data-inset="true"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="c">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /商家信息 -->
+    <!-- 需求列表 -->
+    <div data-role="page" id="node-list" data-theme="d" data-tap-toggle="false" data-title="需求列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="node-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /需求列表 -->
+    <!-- 我的需求列表 -->
+    <div data-role="page" id="myinfo" data-theme="d" data-tap-toggle="false" data-title="我的需求列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="myinfo-list" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /我的需求列表 -->
+    <!-- 卖列表 -->
+    <div data-role="page" id="buydemand" data-theme="d" data-tap-toggle="false" data-title="买">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索买" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="buydemand-list" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand" class="ui-alt-icon">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /卖列表 -->
+    <!-- 买列表 -->
+    <div data-role="page" id="saledemand" data-theme="d" data-tap-toggle="false" data-title="卖">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索卖" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="saledemand-list" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="ui-alt-icon">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand" class="">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /买列表 -->
+    <!-- 其他需求列表 -->
+    <div data-role="page" id="article" data-theme="d"  data-title="其他需求列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索其他需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="article-list" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /其他需求列表 -->
+    <!-- 添加需求 -->
+    <div data-role="page" id="demand" data-theme="f" data-title="添加需求">
+        <div data-role="header" data-theme="d" class="top">
+            <!-- <h1>添加需求</h1> -->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索需求" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-f" data-iscroll='{"pullDownResetText":"加载中..."}'>
+            <ul id="saledemand-list" data-role="listview" data-icon="false">
+                <li>
+                    <a href="#node-create-product">
+                        <image src="img/1-2.png" />
+                        <h3>卖</h3></a>
+                </li>
+                <li>
+                    <a href="#node-create-buydemand">
+                        <image src="img/1-3.png" />
+                        <h3>买</h3></a>
+                </li>
+                <li>
+                    <a href="#node-create-article">
+                        <image src="img/1-4.png" />
+                        <h3>其他需求</h3></a>
+                </li>
+                <li>
+                    <a href="#node-create-employment">
+                        <image src="img/3-2.png" />
+                        <h3>用工信息</h3></a>
+                </li>
+                <li>
+                    <a href="#node-create-logistics">
+                        <image src="img/3-3.png" />
+                        <h3>物流信息</h3></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand" class="ui-alt-icon">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand" class="">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /添加需求 -->
+    <!-- 卖 -->
+    <div data-role="page" id="node-create-product" data-theme="d"  data-title="添加卖">
+        <div data-role="header" data-theme="d" class="top" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>卖</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content" data-tap-toggle="false">
+            <form id="node-create-product-form">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-create-product-title">标题(*)</label>
+                            <input type="text" name="node-create-product-title" id="node-create-product-title" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-create-product-linkphone">联系电话(*)</label>
+                                <input type="tel" name="node-create-product-linkphone" id="node-create-product-linkphone" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+
+
+                <label for="node-create-product-body">产品描述</label>
+                <textarea cols="50" rows="20" name="node-create-product-body" id="node-create-product-body"></textarea>
+                <!-- <label for="node-create-product-sku">产品型号</label>
+                <input type="text" name="node-create-product-sku" id="node-create-product-sku" value=""> -->
+                <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-field-contain">
+                                <label for="node-create-product-price">单价(元/公斤)(*)</label>
+                                <input type="number" step="0.01" name="node-create-product-price" id="node-create-product-price" value="" data-mini="true">
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-create-product-prodcount">数量(*)</label>
+                                <input type="number" step="0.01" name="node-create-product-prodcount" id="node-create-product-prodcount" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <a href="#node-create-product-taxonomy" id="node-create-product-button" data-role="button" data-rel="popup" data-position-to="window" data-transition="slideup">请选择规格(*)</a>
+                <div id="node-create-product-taxonomy" data-role="popup" data-theme="a" class="ui-corner-all"></div>
+                <div id="node-create-product-images"></div>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-create-product-submit">发布</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /卖 -->
+    <!-- 买 -->
+    <div data-role="page" id="node-create-buydemand" data-theme="d" data-title="添加买">
+        <div data-role="header" data-theme="d" class="top" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>买</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-create-buydemand-form">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-create-buydemand-title">标题(*)</label>
+                            <input type="text" name="node-create-buydemand-title" id="node-create-buydemand-title" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-create-buydemand-linkphone">联系电话(*)</label>
+                                <input type="tel" name="node-create-buydemand-linkphone" id="node-create-buydemand-linkphone" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <label for="node-create-buydemand-body">产品描述</label>
+                <textarea cols="50" rows="20" name="node-create-buydemand-body" id="node-create-buydemand-body"></textarea>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-create-buydemand-price">单价(元/公斤)(*)</label>
+                            <input type="number" step="0.01" name="node-create-buydemand-price" id="node-create-buydemand-price" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-create-buydemand-prodcount">数量(*)</label>
+                                <input type="number" step="0.01" name="node-create-buydemand-prodcount" id="node-create-buydemand-prodcount" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <a href="#node-create-buydemand-taxonomy" id="node-create-buydemand-button" data-role="button" data-rel="popup" data-position-to="window" data-transition="slideup">请选择规格(*)</a>
+                <div id="node-create-buydemand-taxonomy" data-role="popup" data-theme="a" class="ui-corner-all"></div>
+                <div id="node-create-buydemand-images"></div>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-create-buydemand-submit">发布</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /买 -->
+    <!-- 创建其他需求 -->
+    <div data-role="page" id="node-create-article" data-theme="d" data-title="添加其他需求">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>创建其他需求</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-create-article-form">
+                <label for="node-create-title">标题(*)</label>
+                <input type="text" name="node-create-article-title" id="node-create-article-title" value="">
+                <label for="node-create-article-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-create-article-linkphone" id="node-create-article-linkphone" value="">
+                <label for="node-create-article-body">描述</label>
+                <textarea cols="50" rows="20" name="node-create-article-body" id="node-create-article-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-create-article-submit">发布</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /创建其他需求 -->
+    <!-- 创建用工信息 -->
+    <div data-role="page" id="node-create-employment" data-theme="d" data-title="添加用工信息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>创建用工信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-create-employment-form">
+                <label for="node-create-employment-title">标题(*)</label>
+                <input type="text" name="node-create-employment-title" id="node-create-employment-title" value="">
+                <label for="node-create-employment-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-create-employment-linkphone" id="node-create-employment-linkphone" value="">
+                <label for="node-create-employment-body">描述</label>
+                <textarea cols="50" rows="20" name="node-create-employment-body" id="node-create-employment-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-create-employment-submit">发布</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /创建用工信息 -->
+    <!-- 创建物流信息 -->
+    <div data-role="page" id="node-create-logistics" data-theme="d" data-tap-toggle="false" data-title="添加物流信息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>创建物流信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body-d">
+            <form id="node-create-logistics-form">
+                <label for="node-create-logistics-title">标题(*)</label>
+                <input type="text" name="node-create-logistics-title" id="node-create-logistics-title" value="">
+                <label for="node-create-logistics-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-create-logistics-linkphone" id="node-create-logistics-linkphone" value="">
+                <label for="node-create-logistics-body">描述</label>
+                <textarea cols="50" rows="20" name="node-create-logistics-body" id="node-create-logistics-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-create-logistics-submit">发布</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /创建物流信息 -->
+    <!-- 修改需求 -->
+    <!-- 修改卖 -->
+    <div data-role="page" id="node-modify-product" data-theme="d" data-tap-toggle="false" data-title="修改卖">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>修改卖</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content" data-tap-toggle="false">
+            <form id="node-modify-product-form">
+                <input type="hidden" name="node-modify-product-nid" id="node-modify-product-nid">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-modify-product-title">标题(*)</label>
+                            <input type="text" name="node-modify-product-title" id="node-modify-product-title" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-modify-product-linkphone">联系电话(*)</label>
+                                <input type="tel" name="node-modify-product-linkphone" id="node-modify-product-linkphone" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+
+
+                <label for="node-modify-product-body">产品描述</label>
+                <textarea cols="50" rows="20" name="node-modify-product-body" id="node-modify-product-body"></textarea>
+                <!-- <label for="node-create-product-sku">产品型号</label>
+                <input type="text" name="node-create-product-sku" id="node-create-product-sku" value=""> -->
+                <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div class="ui-field-contain">
+                                <label for="node-modify-product-price">单价(元/公斤)(*)</label>
+                                <input type="number" step="0.01" name="node-modify-product-price" id="node-modify-product-price" value="" data-mini="true">
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-modify-product-prodcount">数量(*)</label>
+                                <input type="number" step="0.01" name="node-modify-product-prodcount" id="node-modify-product-prodcount" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <a href="#node-modify-product-taxonomy" id="node-modify-product-button" data-role="button" data-rel="popup" data-position-to="window" data-transition="slideup">请选择规格(*)</a>
+                <div id="node-modify-product-taxonomy" data-role="popup" data-theme="a" class="ui-corner-all"></div>
+                <div id="node-modify-product-images"></div>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-modify-product-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /修改卖 -->
+    <!-- 修改买 -->
+    <div data-role="page" id="node-modify-buydemand" data-theme="d" data-title="修改买">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>修改买</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-modify-buydemand-form">
+                <input type="hidden" name="node-modify-buydemand-nid" id="node-modify-buydemand-nid">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-modify-buydemand-title">标题(*)</label>
+                            <input type="text" name="node-modify-buydemand-title" id="node-modify-buydemand-title" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-modify-buydemand-linkphone">联系电话(*)</label>
+                                <input type="tel" name="node-modify-buydemand-linkphone" id="node-modify-buydemand-linkphone" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <label for="node-modify-buydemand-body">产品描述</label>
+                <textarea cols="50" rows="20" name="node-modify-buydemand-body" id="node-modify-buydemand-body"></textarea>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-field-contain">
+                            <label for="node-modify-buydemand-price">单价(元/公斤)(*)</label>
+                            <input type="number" step="0.01" name="node-modify-buydemand-price" id="node-modify-buydemand-price" value="" data-mini="true">
+                        </div>
+                    </div>
+                        <div class="ui-block-b">
+                            <div class="ui-field-contain">
+                                <label for="node-modify-buydemand-prodcount">数量(*)</label>
+                                <input type="number" step="0.01" name="node-modify-buydemand-prodcount" id="node-modify-buydemand-prodcount" value="" data-mini="true">
+                            </div>
+                        </div>
+                </div>
+                <a href="#node-modify-buydemand-taxonomy" id="node-modify-buydemand-button" data-role="button" data-rel="popup" data-position-to="window" data-transition="slideup">请选择规格(*)</a>
+                <div id="node-modify-buydemand-taxonomy" data-role="popup" data-theme="a" class="ui-corner-all"></div>
+                <div id="node-modify-buydemand-images"></div>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-modify-buydemand-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /修改买 -->
+    <!-- 修改其他需求 -->
+    <div data-role="page" id="node-modify-article" data-theme="d" data-title="修改其他需求">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>修改其他需求</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-modify-article-form">
+                <input type="hidden" name="node-modify-article-nid" id="node-modify-article-nid">
+                <label for="node-modify-title">标题(*)</label>
+                <input type="text" name="node-modify-article-title" id="node-modify-article-title" value="">
+                <label for="node-modify-article-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-modify-article-linkphone" id="node-modify-article-linkphone" value="">
+                <label for="node-modify-article-body">描述</label>
+                <textarea cols="50" rows="20" name="node-modify-article-body" id="node-modify-article-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-modify-article-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /创建其他需求 -->
+    <!-- 修改用工信息 -->
+    <div data-role="page" id="node-modify-employment" data-theme="d" data-title="修改用工信息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>修改用工信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <form id="node-modify-employment-form">
+                <input type="hidden" name="node-modify-employment-nid" id="node-modify-employment-nid">
+                <label for="node-modify-employment-title">标题(*)</label>
+                <input type="text" name="node-modify-employment-title" id="node-modify-employment-title" value="">
+                <label for="node-modify-employment-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-modify-employment-linkphone" id="node-modify-employment-linkphone" value="">
+                <label for="node-modify-employment-body">描述</label>
+                <textarea cols="50" rows="20" name="node-modify-employment-body" id="node-modify-employment-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-modify-employment-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /修改用工信息 -->
+    <!-- 修改物流信息 -->
+    <div data-role="page" id="node-modify-logistics" data-theme="d" data-tap-toggle="false" data-title="修改物流信息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>修改物流信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="content" class="ui-body-d">
+            <form id="node-modify-logistics-form">
+                <input type="hidden" name="node-modify-logistics-nid" id="node-modify-logistics-nid">
+                <label for="node-modify-logistics-title">标题(*)</label>
+                <input type="text" name="node-modify-logistics-title" id="node-modify-logistics-title" value="">
+                <label for="node-modify-logistics-linkphone">手机号码(*)</label>
+                <input type="tel" name="node-modify-logistics-linkphone" id="node-modify-logistics-linkphone" value="">
+                <label for="node-modify-logistics-body">描述</label>
+                <textarea cols="50" rows="20" name="node-modify-logistics-body" id="node-modify-logistics-body"></textarea>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="node-modify-logistics-submit">更新</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /创建物流信息 -->
+    <!-- /修改需求 -->
+    <!-- 用工信息列表 -->
+    <div data-role="page" id="node-employment-list" data-theme="d" data-tap-toggle="false" data-title="用工信息列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="node-employment-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /用工信息列表 -->
+    <!-- 物流信息列表 -->
+    <div data-role="page" id="node-logistics-list" data-theme="d" data-tap-toggle="false" data-title="物流信息列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="node-logistics-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /物流信息列表 -->
+    <!-- 核桃协会信息列表 -->
+    <div data-role="page" id="node-association-list" data-theme="d" data-tap-toggle="false" data-title="核桃协会信息列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="node-association-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /核桃协会信息列表 -->
+    <!-- 新闻列表 -->
+    <div data-role="page" id="node-news-list" data-theme="d" data-tap-toggle="false" data-title="新闻列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="node-news-list-info" data-role="listview" data-icon="false"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /新闻列表 -->
+    <!-- 消息列表 -->
+    <div data-role="page" id="message-list" data-theme="d" data-tap-toggle="false" data-title="消息列表">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-iscroll='{"pullDownResetText":"加载中..."}' data-role="content" class="ui-body-d">
+            <div class="iscroll-pulldown">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+            <ul id="message-list-info" data-role="listview"></ul>
+            <div class="iscroll-pullup">
+                <span class="iscroll-pull-icon"></span><span class="iscroll-pull-label" data-iscroll-loading-text="加载中..." data-iscroll-pulled-text="查看更多...">加载</span>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /消息列表 -->
+    <!-- 内容页面 -->
+    <div data-role="page" id="message" data-theme="e" data-title="消息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" data-mini="true" value="" placeholder="搜索大理核桃" onfocus="javascript:$('body').pagecontainer('change', '#search');">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-body-e" id="messagebody">
+            <ul id="messagebody-list" data-role="listview" data-icon="false"></ul>
+            <!-- <button class="ui-btn ui-corner-all ui-btn-a" id="message-submit">回复</button> -->
+            <a href="#popupmessage" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow" data-transition="slideup">回复</a>
+            <div data-role="popup" id="popupmessage" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>回复消息</h3>
+                <textarea cols="50" rows="20" name="popupmessage-body" id="popupmessage-body"></textarea>
+
+                        <button class="ui-btn ui-corner-all ui-shadow ui-btn-b" id="popupmessage-submit" data-rel="back">回复</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="e">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /内容页面 -->
+    <!-- 订单列表 -->
+    <div data-role="page" id="order-list" data-theme="d" data-title="我的订单">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>我的订单</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d">
+            <ul id="order-list-info" data-role="listview" data-icon="false"></ul>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /订单列表 -->
+    <!-- 订单信息 -->
+    <div data-role="page" id="order-info" data-theme="d" class="msg" data-title="订单信息">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>订单信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content" id="order-info-content">
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /订单信息 -->
+    <!-- 收藏的宝贝 -->
+    <div data-role="page" id="bookmark-good-list" data-theme="d" data-title="收藏的宝贝">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>收藏的宝贝</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d">
+            <ul id="bookmark-good-list-info" data-role="listview" data-icon="false">
+                <li><a href="javascript:void(0);">什么也没有</a></li>
+            </ul>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /收藏的宝贝 -->
+    <!-- 收藏的店铺 -->
+    <div data-role="page" id="bookmark-store-list" data-title="收藏的店铺">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>收藏的店铺</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content">
+            <ul id="bookmark-store-list-info" data-role="listview" data-icon="false">
+                <li><a href="javascript:void(0);">什么也没有</a></li>
+            </ul>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /收藏的店铺 -->
+    <!-- 收获地址 -->
+    <div data-role="page" id="setting" data-theme="d" data-title="设置">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>设置</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d">
+            <ul id="address-list-info" data-role="listview" data-icon="false">
+                <!-- <li><a href="javascript:void(0);">什么也没有</a></li> -->
+            </ul>
+            <!-- <div >
+                <div id="user-picture"></div>
+                <input id="user-picture-file" type="file"/>
+            </div> -->
+            <form id="user-setting-form">
+                <div class="ui-field-contain">
+                    <label for="user-setting-realname">姓名</label>
+                    <input type="text" name="user-setting-realname" id="user-setting-realname" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-setting-nickname">昵称</label>
+                    <input type="text" name="user-setting-nickname" id="user-setting-nickname" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-setting-password">当前密码(输入您当前的密码以修改邮箱或密码。)</label>
+                    <input type="password" name="user-setting-password" id="user-setting-password" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-setting-newpassword">密码</label>
+                    <input type="password" name="user-setting-newpassword" id="user-setting-newpassword" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-setting-validatepassword">确认密码</label>
+                    <input type="password" name="user-setting-validatepassword" id="user-setting-validatepassword" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="user-setting-email">邮箱</label>
+                    <input type="text" name="user-setting-email" id="user-setting-email" value="">
+                </div>
+                <!-- <label for="user-register-name">用户名</label> -->
+                <!-- <input type="text" name="user-register-name" id="user-register-name" value=""> -->
+                <div class="ui-field-contain">
+                    <label for="user-setting-province">省</label>
+                    <select name="user-setting-province" id="user-setting-province"></select>
+                    <label for="user-setting-city">市</label>
+                    <select name="user-setting-city" id="user-setting-city"></select>
+                    <label for="user-setting-county">区</label>
+                    <select name="user-setting-county" id="user-setting-county"></select>
+                </div>
+                <p>
+                    <!-- <input data-role="submit" type="submit" value="修改"> -->
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="user-setting-submit">修改</button>
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /收获地址 -->
+    <!-- 编辑内容 -->
+    <div data-role="page" id="address-edit" data-theme="d" data-title="编辑地址">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>编辑收获地址</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d">
+            <form>
+                <input type="hidden" id="commerce_customer_address_profile_id" />
+                <label for="commerce_customer_address_administrative_area">省</label>
+                <select name="commerce_customer_address_administrative_area" id="commerce_customer_address_administrative_area"></select>
+                <label for="commerce_customer_address_locality">市</label>
+                <select name="commerce_customer_address_locality" id="commerce_customer_address_locality"></select>
+                <label for="commerce_customer_address_dependent_locality">区</label>
+                <select name="commerce_customer_address_dependent_locality" id="commerce_customer_address_dependent_locality"></select>
+                <label for="commerce_customer_address_thoroughfare">详细地址</label>
+                <input type="text" name="commerce_customer_address_thoroughfare" id="commerce_customer_address_thoroughfare" value="">
+                <label for="commerce_customer_address_name_line">姓名</label>
+                <input type="text" name="commerce_customer_address_name_line" id="commerce_customer_address_name_line" value="">
+                <label for="commerce_customer_address_linkphone">电话</label>
+                <input type="text" name="commerce_customer_address_linkphone" id="commerce_customer_address_linkphone" value="">
+                <label for="commerce_customer_address_postal_code">邮编</label>
+                <input type="text" name="commerce_customer_address_postal_code" id="commerce_customer_address_postal_code" value="">
+                <label><input type="checkbox" name="commerce_customer_address_default" id="commerce_customer_address_default">设为默认</label>
+                <p>
+                    <button class="ui-btn ui-corner-all ui-btn-a" id="address-edit-submit">更新</button>
+                    <!-- <button class="ui-btn ui-corner-all ui-btn-a" id="address-edit-default">设为默认</button> -->
+                </p>
+            </form>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /编辑内容 -->
+    <!-- 购物车 -->
+    <div data-role="page" id="cart" class="msg" data-title="购物车">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <p>购物车</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-content" id="cart-list">
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /购物车 -->
+    <!-- 搜索 -->
+    <div data-role="page" id="search" data-theme="d" data-title="搜索">
+        <div data-role="header" data-theme="d" class="top">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="javascript:void(0);" data-icon="arrow-l" class="ui-btn-icon-notext" data-ajax="false" data-rel="back">返回</a></li>
+                    <li>
+                        <input type="search" name="password" id="mysearch" oninput="javascript:searchNode(this);" data-mini="true" value="" placeholder="搜索大理核桃">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /header -->
+        <div data-role="main" class="ui-body-d" data-theme="d">
+            <ul id="suggestionsList" data-role="listview" data-inset="true" data-theme="d" data-mini="true"></ul>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#front" data-icon="front" class="">首页</a>
+                    </li>
+                    <li>
+                        <a href="#saledemand" data-icon="saledemand" class="">卖</a>
+                    </li>
+                    <li>
+                        <a href="#demand" data-icon="demand">发布需求</a>
+                    </li>
+                    <li>
+                        <a href="#buydemand" data-icon="buydemand">买</a>
+                    </li>
+                    <li>
+                        <a href="#user-profile" data-icon="my" class="">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /搜索 -->
+    <div data-role="page" id="dialog-error" data-theme="f" data-dialog="true" data-close-btn="right">
+        <div data-role="header" data-theme="f">
+            <h1 id="dialog-error-header"></h1>
+        </div>
+        <div data-role="main" class="ui-body-f">
+            <h1 id="dialog-error-main-header"></h1>
+            <p id="dialog-error-main-content"></p>
+            <a href="javascript:void(0);" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b">确定</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/upgrade.js"></script>
+    <script type="text/javascript">
+        $(function() {
+        $.mobile.panel.prototype._positionPanel = function() {
+            var self = this,
+                panelInnerHeight = self._panelInner.outerHeight(),
+                expand = panelInnerHeight > $.mobile.getScreenHeight();
+
+            if ( expand || !self.options.positionFixed ) {
+                if ( expand ) {
+                    self._unfixPanel();
+                    $.mobile.resetActivePageHeight( panelInnerHeight );
+                }
+              //window.scrollTo( 0, $.mobile.defaultHomeScroll );
+            } else {
+                self._fixPanel();
+            }
+        };
+    });
+    </script>
+    <script type="text/javascript">
+    app.initialize();
+    index.init();
+    </script>
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"hzs168"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+    <!--<script type="text/javascript" name="baidu-tc-cerfication" data-appid="6735040" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>-->
+</body>
+
+</html>

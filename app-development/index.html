@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>核作社</title>
+  <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.min.css" />
+  <style type="text/css">
+    .ui-mobile body {
+      height: auto; /* reset height */
+    }
+    #content {
+      height: 99.9%; /* new viewport (pagecontainer) */
+    }
+  </style>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+  <div id="content"></div>
+  <script src="js/react-0.13.3/thirdparty/es5-shim.min.js"></script>
+  <script src="js/react-0.13.3/thirdparty/es5-sham.min.js"></script>
+  <script src="js/react-0.13.3/thirdparty/console-polyfill.js"></script>
+  <script src="jquery/jquery-2.1.4.min.js"></script>
+  <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript">
+    $(document).on("mobileinit", function(e, data) {
+      $.mobile.autoInitializePage = false; /* disable auto-initialization */
+      $.mobile.pageContainer = $("#content"); /* set new "pagecontainer" */
+    });
+  </script>
+  <script src="js/react-0.13.3/react.js"></script>
+  <script src="js/react-0.13.3/thirdparty/browser.min.js"></script>
+  <script type="text/javasript" src="js/build/hzs.js"></script>
+
+</body>
+</html>

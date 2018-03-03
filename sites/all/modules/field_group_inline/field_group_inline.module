@@ -1,0 +1,126 @@
+<?php
+
+/**
+ * @file
+ * Make possible to show entity fields inline inside one group.
+ */
+
+/**
+ * Implements hook_field_group_formatter_info().
+ */
+function field_group_inline_field_group_formatter_info() {
+  return array(
+    'display' => array(
+      'inline' => array(
+        'label' => t('Inline elements'),
+        'instance_settings' => array(
+          'extra_classes' => '',
+          'separator' => '|',
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_group_format_settings().
+ */
+function field_group_inline_field_group_format_settings($group) {
+  $form = array();
+
+  $mode = $group->mode == 'form' ? 'form' : 'display';
+  $field_group_types = field_group_formatter_info();
+  $formatter = $field_group_types[$mode][$group->format_type];
+  $default_settings = $formatter['instance_settings'];
+  $settings = $group->format_settings['instance_settings'];
+
+  if (isset($formatter['instance_settings']['separator'])) {
+    $form['instance_settings']['separator'] = array(
+      '#title' => t('Fields separator'),
+      '#type' => 'textfield',
+      '#default_value' => isset($settings['separator']) ?
+        $settings['separator'] : $default_settings['separator'],
+    );
+  }
+  if (isset($formatter['instance_settings']['extra_classes'])) {
+    $form['instance_settings']['extra_classes'] = array(
+      '#title' => t('Extra CSS classes'),
+      '#type' => 'textfield',
+      '#default_value' => isset($settings['extra_classes']) ?
+        $settings['extra_classes'] : $default_settings['extra_classes'],
+      '#element_validate' => array('field_group_validate_css_class'),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements field_group_pre_render_<format-type>.
+ */
+function field_group_pre_render_inline(&$element, $group, &$form) {
+  if (isset($group->format_settings['instance_settings'])) {
+    $settings = $group->format_settings['instance_settings'];
+  }
+  else {
+    $formatter = field_group_inline_field_group_formatter_info();
+    $settings = $formatter['display']['inline']['instance_settings'];
+  }
+
+  $items = array();
+  foreach ($group->children as $group_name) {
+    if (!empty($element[$group_name])) {
+      $items[$group_name] = &$element[$group_name];
+    }
+  }
+
+  $element += array(
+    '#theme' => 'field_group_inline',
+    '#group' => $group,
+    '#items' => $items,
+    '#separator' => check_plain($settings['separator']),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function field_group_inline_theme($existing, $type, $theme, $path) {
+  return array(
+    'field_group_inline' => array(
+      'variables' => array(
+        'group' => NULL, 'items' => NULL, 'separator' => NULL,
+      ),
+      'template' => 'field-group-inline',
+    ),
+  );
+}
+
+/**
+ * Preprocess variables for field-group-inline.tpl.php
+ */
+function template_preprocess_field_group_inline(&$variables) {
+  $variables['label'] = !empty($variables['group']->label) ? check_plain($variables['group']->label) : '';
+
+  $variables['classes_array'] = array('field-group', 'field-group-inline', 'clearfix');
+  $variables['classes_array'][] = drupal_html_class($variables['group']->group_name);
+  $variables['classes_array'][] = $variables['group']->format_settings['instance_settings']['extra_classes'];
+
+  drupal_add_css(drupal_get_path('module', 'field_group_inline') . '/field_group_inline.css');
+
+  $group = $variables['group'];
+
+  $suggestons = array();
+  $entity_type = 'field_group_inline__' . $group->entity_type;
+
+  $suggestons[] = $entity_type;
+  $suggestons[] = $entity_type . '__' . $group->bundle;
+  $suggestons[] = $entity_type . '__' . $group->mode;
+  $suggestons[] = $entity_type . '__' . $group->bundle . '__' . $group->mode;
+
+  $suggestons[] = 'field_group_inline__' . $group->group_name;
+  $suggestons[] = $entity_type . '__' . $group->group_name;
+  $suggestons[] = $entity_type . '__' . $group->bundle . '__' . $group->group_name;
+  $suggestons[] = $entity_type . '__' . $group->mode . '__' . $group->group_name;
+
+  $variables['theme_hook_suggestions'] += $suggestons;
+}

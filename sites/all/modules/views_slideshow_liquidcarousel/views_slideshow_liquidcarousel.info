@@ -1,0 +1,15 @@
+name = Views Slideshow: jQuery Liquid Carousel
+description = Adds a jQuery Liquid Carousel option to views slideshow
+dependencies[] = views
+dependencies[] = views_slideshow
+dependencies[] = libraries(>=7.x-2.0)
+package = Views
+core = 7.x
+files[] = views_slideshow_liquidcarousel.module
+
+; Information added by drupal.org packaging script on 2013-10-19
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "views_slideshow_liquidcarousel"
+datestamp = "1382165164"
+

@@ -1,0 +1,208 @@
+<?php
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function hezuoshe_user_views_pre_build(&$view) {
+  if ($view->name == 'commerce_backoffice_order_user_orders' && $view->current_display == 'order_page') {
+    $view->display['order_page']->handler->options['title'] = _hezuoshe_user_page_title();
+  }
+}
+
+
+/**
+ * Grant access only to administrators.
+ */
+function hezuoshe_user_access_callback($account) {
+  return user_access('administer site configuration', $account);
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function hezuoshe_user_module_implements_alter(&$implementations, $hook) {
+  if (in_array($hook, array('form_alter')) && isset($implementations['hezuoshe_user'])) {
+    // Move our hook implementation to the bottom.
+    $group = $implementations['hezuoshe_user'];
+    unset($implementations['hezuoshe_user']);
+    $implementations['hezuoshe_user'] = $group;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Hide the Mime Mail settings on the user settings page.
+ */
+function hezuoshe_user_form_user_profile_form_alter(&$form, &$form_state) {
+  if ($form['#user_category'] == 'account') {
+    $form['mimemail']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_user_view().
+ */
+function hezuoshe_user_user_view($account, $view_mode, $langcode) {
+  global $user;
+  $account->content['information'] =  array(
+    '#type' => 'user_profile_category',
+    '#title' => t('Account information'),
+    '#markup' => '',
+    '#attributes' => array('class' => 'user-information'),
+    '#weight' => 0,
+  );
+
+  // if (module_exists('commerce_addressbook')) {
+  //   $shipping_profile_id = NULL;
+  //   if (commerce_addressbook_profile_page_access($account, 'shipping')) {
+  //     $shipping_profile_id = commerce_addressbook_get_default_profile_id($account->uid, 'shipping');
+  //     if ($shipping_profile_id) {
+  //       $shipping_profile = commerce_customer_profile_load($shipping_profile_id);
+  //       $shipping_profile_render = entity_view('commerce_customer_profile', array($shipping_profile), 'full');
+  //       $shipping_profile_render = reset($shipping_profile_render);
+  //       $shipping_profile_output = drupal_render($shipping_profile_render);
+  //     }
+  //     else {
+  //       $shipping_profile_output = '<p>' . t('No default shipping profile') . '</p>';
+  //     }
+  //     $account->content['information']['shipping_profile'] =  array(
+  //       '#type' => 'user_profile_item',
+  //       '#title' => t('Primary shipping address'),
+  //       '#markup' => $shipping_profile_output . l(t('Manage shipping address'), 'user/' . $account->uid . '/addressbook/shipping'),
+  //       '#attributes' => array('class' => array('shipping-address')),
+  //     );
+  //   }
+  // }
+  $nicknamemarkup = !empty($account->content['field_nickname']) ? $account->content['field_nickname'][0]['#markup'] : t('none');
+  $account->content['information']['nickname'] = array(
+    '#type' => 'user_profile_item',
+    '#title' => t('nickname'),
+    '#markup' => '<div class="info">' . $nicknamemarkup . '</div>',
+    '#attributes' => array('class' => 'nickname'),
+  );
+  $phonenum=$account->sms_user['number'];
+  if($phonenum==''){
+    $phonenum=t('none');
+  }
+  $email=$account->mail;
+  if($email==''){
+    $email=t('none');
+  }
+  $account->content['information']['phonenumber'] = array(
+    '#type' => 'user_profile_item',
+    '#title' => t('phonenumber'),
+    '#markup' => '<div class="info">' . $phonenum . '</div>',
+    '#attributes' => array('class' => 'phonenumber'),
+  );
+  $account->content['information']['mail'] = array(
+    '#type' => 'user_profile_item',
+    '#title' => t('Email address'),
+    '#markup' => '<div class="info">' . $email . '</div>',
+    '#attributes' => array('class' => 'mail'),
+  );
+  if (($url = privatemsg_get_link(array($account))) && variable_get('privatemsg_display_profile_links', 1) && $user->uid!=$account->uid) {
+    $account->content['information']['privatemsg_send_new_message'] = array(
+      '#type'   => 'link',
+      '#title'  => t('Send this user a private message'),
+      '#href'  => $url,
+      '#prefix' => '<div class="privatemsg">',
+      '#suffix' => '</div>',
+      '#options' => array(
+        'query' => drupal_get_destination(),
+        'title' => t('Send this user a private message'),
+        'attributes' => array('class' => 'privatemsg-send-link privatemsg-send-link-profile'),
+      ),
+    );
+  }
+  $account->content['recent_orders'] =  array(
+    '#type' => 'user_profile_category',
+    '#title' => t('Recent orders'),
+    '#markup' => '',
+    '#attributes' => array('class' => 'user-recent-orders'),
+    '#access' => user_access('view own commerce_order entities', $account),
+    '#weight' => 4,
+  );
+  $account->content['recent_orders']['view'] = array(
+    '#type' => 'user_profile_item',
+    '#title' => '',
+    '#markup' => views_embed_view('commerce_backoffice_user_orders', 'block_1', $account->uid),
+    '#attributes' => array('class' => 'recent-orders'),
+  );
+  if(!empty($account->content['field_nickname'])){
+    $account->content['field_nickname']=array();
+  }
+}
+
+/**
+ * Implements hook_user_view_alter().
+ *
+ * Hide other infos.
+ */
+function hezuoshe_user_user_view_alter(&$build) {
+  if (isset($build['mimemail'])) {
+    unset($build['mimemail']);
+  }
+  // if (isset($build['summary'])) {
+  //   unset($build['summary']);
+  // }
+}
+
+/**
+ * Implements hook_preprocess_user_profile_item().
+ */
+// function hezuoshe_user_preprocess_user_profile_item(&$variables) {
+//   // Append custom css classes.
+//   if (!empty($variables['element']['#attributes']['class'])) {
+//     $variables['classes_array'] = array_merge($variables['classes_array'], $variables['element']['#attributes']['class']);
+//   }
+// }
+
+/**
+ * Implements hook_preprocess_user_profile_category().
+ */
+// function hezuoshe_user_preprocess_user_profile_category(&$variables) {
+//   // Append custom css classes.
+//   if (!empty($variables['element']['#attributes']['class'])) {
+//     $variables['classes_array'] = array_merge($variables['classes_array'], $variables['element']['#attributes']['class']);
+//   }
+//   drupal_set_message('1');
+// }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function hezuoshe_user_preprocess_page(&$vars) {
+  global $user;
+  if(arg(0)=='user'){
+    $tmp = arg(1);
+    if(!empty($tmp) && arg(1)!=$user->uid && !empty($vars['page']['highlighted']['views_userinfo-block'])){
+      //$vars['page']['highlighted']['views_userinfo-block']['#type']='hidden';
+      $markup1=$vars['page']['highlighted']['views_userinfo-block']['#markup'];
+      //$startpos=stripos($newmarkup,'<a class="nophone"');
+      //$temp=substr($newmarkup,$startpos);
+      //var_export($temp);
+      $strnew='<a class="nophone" href="http://www.hzs168.com/user/'.arg(1).'/edit/mobile">绑定手机</a>';
+      $markup2=str_replace($strnew, '无', $markup1);
+      $strnew='<a class="nomail" href="http://www.hzs168.com/user/'.arg(1).'/edit">绑定邮箱</a>';
+      $newmarkup=str_replace($strnew, '无', $markup2);
+      $vars['page']['highlighted']['views_userinfo-block']['#markup']=$newmarkup;
+    }
+    if(!empty($vars['tabs']['#primary'])){
+      foreach ($vars['tabs']['#primary'] as $key => $value) {
+        if($value['#link']['path']=='user/%/view'){
+          $vars['tabs']['#primary'][$key]['#link']['title']=t('userhome');
+        }
+        if($value['#link']['path']=='user/%/edit'){
+          $vars['tabs']['#primary'][$key]['#link']['title']=t('modaccount');
+        }
+        if($value['#link']['path']=='user/%/messages'){
+          if(!empty($tmp) && arg(1)!=$user->uid)
+          unset($vars['tabs']['#primary'][$key]);
+        }
+      }
+    }
+
+    $vars['tabs']['#secondary']['#type']='hidden';
+  }
+}

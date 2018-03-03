@@ -1,0 +1,232 @@
+/*.swiper-container {
+    margin: 0;
+    padding: 0;
+}*/
+body{
+    font-size:14px;
+}
+.swiper-slide img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.store-detail img {
+    width: 100%;
+    height: 100%;
+}
+
+.msg {
+    background-color: rgb(238, 238, 238);
+}
+
+.c-msg {
+    text-align: center;
+}
+
+.warn {
+    background-position: center 0;
+}
+
+.c-msg-img {
+    background: url(../img/c-msg-bg.gif) no-repeat;
+    display: inline-block;
+    height: 151px;
+    margin-top: 30px;
+    width: 151px;
+}
+
+.c-msg-info {
+    line-height: 22px;
+    margin-top: 30px;
+}
+
+.opt {
+    color: rgb(153, 153, 153);
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.ui-icon-login:after {
+    background-image: url("../img/8.png");
+}
+
+.ui-icon-register:after {
+    background-image: url("../img/9.png");
+}
+
+
+.ui-icon-front:after {
+    background-image: url("../img/2-1-2.png");
+    -moz-background-size:24px 24px;
+    -o-background-size:24px 24px;
+    -webkit-background-size:24px 24px;
+    background-size:24px 24px;
+}
+
+.ui-alt-icon.ui-icon-front:after,
+.ui-alt-icon .ui-icon-front:after {
+    background-image: url("../img/2-1-1.png");
+    -moz-background-size:24px 24px;
+    -o-background-size:24px 24px;
+    -webkit-background-size:24px 24px;
+    background-size:24px 24px;
+}
+
+.ui-icon-saledemand:after{
+    background-image: url("../img/2-2-1.png");
+}
+.ui-alt-icon.ui-icon-saledemand:after,
+.ui-alt-icon .ui-icon-saledemand:after {
+    background-image: url("../img/2-2-2.png");
+}
+
+.ui-icon-demand:after {
+    background-image: url("../img/2-3-1.png");
+}
+.ui-alt-icon.ui-icon-demand:after,
+.ui-alt-icon .ui-icon-demand:after {
+    background-image: url("../img/2-3-2.png");
+}
+
+.ui-icon-buydemand:after {
+    background-image: url("../img/2-4-1.png");
+}
+.ui-alt-icon.ui-icon-buydemand:after,
+.ui-alt-icon .ui-icon-buydemand:after {
+    background-image: url("../img/2-4-2.png");
+}
+
+.ui-icon-my:after {
+    background-image: url("../img/2-5-1.png");
+}
+.ui-alt-icon.ui-icon-my:after,
+.ui-alt-icon .ui-icon-my:after {
+    background-image: url("../img/2-5-2.png");
+}
+
+.ui-icon-bookmarked:after {
+    background-image: url("../img/10-1-3.png");
+}
+
+.ui-icon-bookmark:after {
+    background-image: url("../img/10-1-1.png");
+}
+.ui-alt-icon.ui-icon-bookmark:after,
+.ui-alt-icon .ui-icon-bookmark:after {
+    background-image: url("../img/10-1-2.png");
+}
+
+.ui-icon-qd:after {
+    background-image: url("../img/10-2-1.png");
+}
+.ui-alt-icon.ui-icon-qd:after,
+.ui-alt-icon .ui-icon-qd:after {
+    background-image: url("../img/10-2-2.png");
+}
+
+.ui-icon-zb:after {
+    background-image: url("../img/10-3-1.png");
+}
+.ui-alt-icon.ui-icon-zb:after,
+.ui-alt-icon .ui-icon-zb:after {
+    background-image: url("../img/10-3-2.png");
+}
+
+.ui-icon-jb:after {
+    background-image: url("../img/10-4-1.png");
+}
+.ui-alt-icon.ui-icon-jb:after,
+.ui-alt-icon .ui-icon-jb:after {
+    background-image: url("../img/10-4-2.png");
+}
+
+.ui-icon-cart:after {
+    background-image: url("../img/10-5-1.png");
+}
+.ui-alt-icon.ui-icon-cart:after,
+.ui-alt-icon .ui-icon-cart:after {
+    background-image: url("../img/10-5-2.png");
+}
+
+
+.ui-icon-home2:after {
+    background-image: url("../img/home.png");
+     -moz-background-size:24px 24px;
+    -o-background-size:24px 24px;
+    -webkit-background-size:24px 24px;
+    background-size:24px 24px;
+}
+
+.ui-icon-return:after {
+    background-image: url("../img/return.png");
+    -moz-background-size:24px 24px;
+    -o-background-size:24px 24px;
+    -webkit-background-size:24px 24px;
+    background-size:24px 24px;
+}
+
+.iscroll-scroller {
+  /* Add any styles that you want to add to scrollers */
+  width: 100%;
+}
+
+
+.ui-icon-xh:after {
+    background-image: url("../img/xh.png");
+}
+
+.ui-icon-xx:after {
+    background-image: url("../img/xx.png");
+}
+.ui-icon-message:after {
+    background-image: url("../img/message.png");
+}
+
+.ui-icon-camera:after {
+    background-image: url("../img/camera.png");
+}
+
+.ui-icon-photolibrary:after {
+    background-image: url("../img/photolibrary.png");
+}
+.ui-icon-modify:after {
+    background-image: url("../img/modify.png");
+}
+.ui-listview .ui-li-aside {
+    top: 0.5em;
+}
+
+
+.ui-btn {
+    font-size: 14px;
+}
+
+.ui-mobile label{
+    font-size: 14px;
+}
+.error {
+    color: red;
+}
+
+.ui-mini .ui-controlgroup-label {
+    font-size: 14px;
+}
+
+.ui-mini .ui-btn {
+    font-size: 14px;
+}
+
+.ui-listview>li p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb {
+    /*position: absolute;
+    left: 0;
+    top: 0;*/
+    max-height: 6em;
+    max-width: 6em;
+}

@@ -1,0 +1,13 @@
+name = HeZuoShe User
+description = Provides user related functionality.
+core = 7.x
+package = HeZuoShe
+dependencies[] = block
+dependencies[] = commerce_addressbook
+dependencies[] = commerce_customer
+dependencies[] = commerce_shipping
+dependencies[] = ctools
+
+; Information added by hezuoshe packaging script on 2015-08-24
+version = "7.x-1.0"
+

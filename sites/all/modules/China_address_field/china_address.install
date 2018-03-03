@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Install  functions for China address field.
+ */
+
+/**
+ * Implements hook_field_schema().
+ */
+function china_address_field_schema($field) {
+  if ($field['type'] == 'china_address') {
+    $schema['columns']['province'] = array(
+      'type' => 'int',
+      'not null' => FALSE,
+    );
+    $schema['columns']['city'] = array(
+      'type' => 'int',
+      'not null' => FALSE,
+    );
+    $schema['columns']['county'] = array(
+      'type' => 'int',
+      'not null' => FALSE,
+    );
+    $schema['indexes'] = array(
+      'province' => array('province'),
+      'city' => array('city'),
+      'county' => array('county'),
+    );
+
+    return $schema;
+  }
+}
+
+

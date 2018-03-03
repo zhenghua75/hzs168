@@ -1,0 +1,22 @@
+# Chinese, Simplified translation of FileField Nginx Progress (7.x-2.3)
+# Copyright (c) 2012 by the Chinese, Simplified translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FileField Nginx Progress (7.x-2.3)\n"
+"POT-Creation-Date: 2012-10-21 15:41+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Chinese, Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "CCK"
+msgstr "CCK"
+msgid "Not enabled"
+msgstr "未启用"
+msgid "Starting upload..."
+msgstr "开始上传…"
+msgid "Uploading... (@current of @total)"
+msgstr "上传中…（@total 中的 @current）"

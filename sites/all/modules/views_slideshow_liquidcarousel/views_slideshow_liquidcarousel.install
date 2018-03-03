@@ -1,0 +1,39 @@
+<?php
+/**
+ *  @file views_slideshow_liquidcarousel.views_slideshow.install
+ */
+
+
+/**
+ * Implements hook_requirements().
+ */
+function views_slideshow_liquidcarousel_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+  module_load_include('module', 'libraries', 'libraries');
+  module_load_include('module', 'views_slideshow_liquidcarousel', 'views_slideshow_liquidcarousel');
+
+  if ($phase == 'runtime') {
+    $requirements['liquidcarousel'] = array(
+      'title' => t('jQuery Liquid Carousel'),
+    );
+
+    $library = libraries_load('liquidcarousel', 'minified');
+
+    if (!$library['installed']) {
+      $requirements['liquidcarousel']['description'] = _views_slideshow_liquidcarousel_get_install_error_message();
+      $requirements['liquidcarousel']['severity'] = REQUIREMENT_ERROR;
+      if ($phase == 'runtime') {
+        $requirements['liquidcarousel']['value'] = $t('Missing');
+      }
+    }
+    else {
+      $requirements['liquidcarousel']['value'] = "1.0";
+      $requirements['liquidcarousel']['severity'] = REQUIREMENT_OK;
+    }
+  }
+
+  return $requirements;
+}
+
+
